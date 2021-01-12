@@ -22,3 +22,26 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# テーブル設計
+
+## userテーブル
+
+| column             | type   | option                    |
+| ------------------ | ------ | ------------------------- |
+| name               | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+
+### Association
+has_many :blogs
+
+## blogsテーブル
+
+| column  | type   | option      |
+| ------- | ------ | ----------- |
+| title   | string | null: false |
+| article | text   | null: false |
+
+### Association
+belong_to :user
