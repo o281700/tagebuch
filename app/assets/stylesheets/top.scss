@@ -11,17 +11,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  &Content {
-    width: 30%;
+  &Title {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
     .btn-success {
       width: 100%;
-      font-size: 4rem;
+      font-size: 2rem;
       border-radius: 10px;
       padding: 10px 20px;
     }
-    &Nav {
-      margin-top: 10px;
-      text-align: center;
-    }
+  }
+  &Nav {
+    margin-top: 10px;
+    text-align: center;
   }
 }
