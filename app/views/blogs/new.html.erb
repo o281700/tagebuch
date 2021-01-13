@@ -1,1 +1,20 @@
 <%= render 'layouts/sub_header' %>
+
+<div class='blogNew'>
+  <div class='container'>
+    <%= form_with model: @blog, local: true  do |f| %>
+      <div class='form-group'>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: 'form-control', placeholder: 'タイトル' %>
+      </div>
+
+      <div class='form-group'>
+        <%= f.label :article %>
+        <%= f.text_area :article, class: 'form-control', rows: '20', placeholder: '本文を入力してください' %>
+      </div>
+
+      <div class='text-center'><%= f.submit '作成', class: 'btn btn-primary' %></div>
+      <div class='text-center'><%= link_to 'キャンセル', blogs_path %></div>
+    <% end %>
+  </div>
+</div>
