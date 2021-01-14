@@ -6,19 +6,25 @@
       <div class='blogShowBlogName'>BLOG</div>
     </div>
     <div class='blogShowItem'>
-      <div class='blogShowItemDate'><%= @blog.updated_at.to_s(:datetime_jp)%></div>
+      <div class='blogShowItemDate'><%= @blog.updated_at.to_s(:datetime_jp) %></div>
       <div class='blogShowItemTitle'><%= @blog.title %></div>
+      <%# 編集/削除は仮置き、ユーザー管理機能実装後にユーザー詳細ページへ %>
+      <div class='text-left'>
+        <%= link_to '編集', '#', class: 'blogEdit' %>
+        /
+        <%= link_to '削除', blog_path(@blog), method: :delete, class: 'blogDelete' %>
+      </div>
       <div class='blogShowItemArticle'><%= @blog.article %></div>
     </div>
     <div class='transition'>
       <div class='row'>
-        <div class='col-md-4 text-left'>
+        <div class='col-4 text-left'>
           <% if @blog.next.present? %>
             <%= link_to '< NEXT', blog_path(@blog.next) %>
           <% end %>
         </div>
-        <div class='col-md-4 text-center'><%= link_to 'Back', blogs_path %></div>
-        <div class='col-md-4 text-right'>
+        <div class='col-4 text-center'><%= link_to 'Back', blogs_path %></div>
+        <div class='col-4 text-right'>
           <% if @blog.previous.present? %>
             <%= link_to 'PREV >', blog_path(@blog.previous) %>
           <% end %>

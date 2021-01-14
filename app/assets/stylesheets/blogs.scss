@@ -73,13 +73,13 @@
     &Title {
       font-size: 2rem;
       font-weight: bold;
-      border-bottom: solid #eee;
       padding-bottom: 10px;
     }
     &Date {
       padding-top: 10px;
     }
     &Article {
+      border-top: solid #eee;
       padding: 20px 0;
       white-space: pre-wrap;
     }
