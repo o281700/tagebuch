@@ -13,7 +13,7 @@
               <div class='blogItemTime'><%= blog.updated_at.to_s(:datetime_jp) %></div>
               <div class='blogItemArticle'><%= blog.article %></div>
             </div>
-            <div class='blogItemContinued'><%= link_to '続きを読む', '#' %></div>
+            <div class='blogItemContinued'><%= link_to '続きを読む', blog_path(blog) %></div>
           </div>
         </div>
       <% end %>

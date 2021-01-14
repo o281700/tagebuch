@@ -18,13 +18,13 @@
   width: 85%;
   margin: 0 auto;
   &Heading {
-    border-bottom: 2px solid #a1a1a1;
+    border-bottom: 2px solid #eee;
     margin-top: 20px;
     font-weight: bold;
   }
   &Item {
-    border-right: 1px solid #a1a1a1;
-    border-bottom: 1px solid #a1a1a1;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
     margin: 15px 0;
     padding: 0 5px;
     &Content {
@@ -55,4 +55,38 @@
   }
 }
 
-
+// blogShowPage
+.blogShow {
+  background-color: #fafafa;
+  padding: 20px 0;
+  &Blog {
+    background-color: #fff;
+    margin-bottom: 10px;
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  &Item {
+    background-color: #fff;
+    min-height: calc(100vh - 200px);
+    padding: 0 50px;
+    &Title {
+      font-size: 2rem;
+      font-weight: bold;
+      border-bottom: solid #eee;
+      padding-bottom: 10px;
+    }
+    &Date {
+      padding-top: 10px;
+    }
+    &Article {
+      padding: 20px 0;
+      white-space: pre-wrap;
+    }
+  }
+  .transition {
+    margin-top: 10px;
+    padding: 0 50px;
+    background-color: #fff;
+  }
+}
