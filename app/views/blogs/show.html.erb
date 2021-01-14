@@ -1,0 +1,19 @@
+<%= render 'layouts/sub_header' %>
+
+<div class='blogShow'>
+  <div class='container'>
+    <div class='blogShowBlog'>
+      <div class='blogShowBlogName'>BLOG</div>
+    </div>
+    <div class='blogShowItem'>
+      <div class='blogShowItemDate'><%= @blog.updated_at.to_s(:datetime_jp)%></div>
+      <div class='blogShowItemTitle'><%= @blog.title %></div>
+      <div class='blogShowItemArticle'><%= @blog.article %></div>
+    </div>
+    <div class='transition'>
+      <%= link_to '前の記事', '#' %>
+      <%= link_to '戻る', blogs_path %>
+      <%= link_to '次の記事', '#' %>
+    </div>
+  </div>
+</div>

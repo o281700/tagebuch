@@ -6,10 +6,6 @@ body {
   font-size: 1.6em;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 // fontAwesome
 .fa-pen-nib, .fa-edit {
   margin-right: 5px;
@@ -17,7 +13,7 @@ body {
 
 // header, subHeader
 .header {
-  background-color: #eee;
+  background-color: #fafafa;
   padding: 0 20px 0 20px;
   &_wrapper {
     height: 40px;
