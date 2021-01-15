@@ -1,4 +1,6 @@
 class BlogsController < ApplicationController
+  before_action :set_blog, only: [:show, :edit, :update]
+
   def index
     @blogs = Blog.all.order('id DESC')
   end
@@ -17,7 +19,6 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.find(params[:id])
   end
 
   def destroy
@@ -26,9 +27,24 @@ class BlogsController < ApplicationController
     redirect_to blogs_path
   end
 
+  def edit
+  end
+
+  def update
+    if @blog.update(blog_params)
+      redirect_to blog_path(@blog)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def blog_params
     params.require(:blog).permit(:title, :article)
+  end
+
+  def set_blog
+    @blog = Blog.find(params[:id])
   end
 end

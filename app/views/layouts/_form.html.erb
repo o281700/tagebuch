@@ -1,0 +1,18 @@
+<div class='blogNew'>
+  <div class='container'>
+    <div class='blogNewForm'>
+      <%= form_with model: @blog, local: true  do |f| %>
+        <div class='form-group'>
+          <%= f.text_field :title, class: 'form-control', placeholder: 'タイトル' %>
+        </div>
+
+        <div class='form-group'>
+          <%= f.text_area :article, class: 'form-control', rows: '20', placeholder: '本文を入力してください' %>
+        </div>
+
+        <div class='text-center'><%= f.submit '送信', class: 'btn btn-primary' %></div>
+        <div class='text-center'><%= link_to 'キャンセル', blogs_path, class: 'cancelLink' %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
