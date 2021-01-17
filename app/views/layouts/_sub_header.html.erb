@@ -1,7 +1,13 @@
 <header class='subHeader'>
   <div class='subHeader_title'>
-    <%= link_to blogs_path do %>
-      <i class="fas fa-pen-nib"></i>Tagebuch
+    <% if devise_controller? %>
+      <%= link_to root_path do %>
+        <i class="fas fa-pen-nib"></i>Tagebuch
+      <% end %>
+    <% else %>
+      <%= link_to blogs_path do %>
+        <i class="fas fa-pen-nib"></i>Tagebuch
+      <% end %>
     <% end %>
   </div>
 </header>
