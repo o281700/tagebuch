@@ -56,9 +56,14 @@ body {
         border: 1px solid #a1a1a1;
         box-shadow: 0px 0px 1px;
         border-radius: 2px;
-        padding: 8px 0 8px 8px;
+        li {
+          :hover {
+            background-color: #f7f7f7;
+          }
+        }
         a {
           display: block;
+          padding: 5px 0 5px 5px;
         }
       }
       .userName {
