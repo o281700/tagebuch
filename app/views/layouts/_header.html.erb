@@ -7,9 +7,22 @@
         <% end %>
       </li>
       <li class='header_create'>
-        <%= link_to new_blog_path do %>
-          <i class="fas fa-edit"></i>記事作成
-        <% end %>
+        <ul class='header_create_nav'>
+          <li>
+            <div class='userName' >
+              <%= image_tag 'user_icon_default.png', size: '18x18', class: 'user_icon' %><%= current_user.nickname %>
+            </div>
+            <ul>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to 'マイページ', '#' %></li>
+            </ul>
+          </li>
+          <li>
+            <%= link_to new_blog_path do %>
+              <i class="fas fa-edit"></i>記事作成
+            <% end %>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
