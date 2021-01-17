@@ -1,0 +1,41 @@
+<%= render 'layouts/sub_header' %>
+
+<div class='user'>
+  <div class='container'>
+    <div class='userTitle'>
+      <h1 class='text-center'>アカウント新規登録</h1><p class='text-center'>or</p>
+      <p class='text-center'><%= link_to 'アカウントにログイン', new_user_session_path %></p>
+    </div>
+    <div class='userForm'>
+      <%= form_with model: @user, url: user_registration_path, local: true  do |f| %>
+
+        <div class='form-group'>
+          <%= f.label :nickname %><br />
+          <%= f.text_field :nickname, class: 'form-control', autofocus: true, placeholder: 'ニックネームを入力してください' %>
+        </div>
+
+        <div class='form-group'>
+          <%= f.label :email %><br />
+          <%= f.email_field :email, class: 'form-control', placeholder: 'E-mailを入力してください' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, class: 'form-control', placeholder: 'パスワードを入力してください' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'パスワードを再入力してください' %>
+        </div>
+
+        <div class='text-center'><%= f.submit '新規登録', class: 'btn btn-primary' %></div>
+        <div class='text-center'><%= link_to 'キャンセル', root_path, class: 'cancelLink' %></div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<%= render 'layouts/sub_header' %>
+
+<div class='user'>
+  <div class='container'>
+    <div class='userTitle'>
+      <h1 class='text-center'>Tagebuchへログイン</h1><p class='text-center'>or</p>
+      <p class='text-center'><%= link_to 'アカウント新規登録', new_user_registration_path %></p>
+    </div>
+    <div class='userForm'>
+      <%= form_with model: @user, url: user_session_path, local: true  do |f| %>
+
+        <div class='form-group'>
+          <%= f.label :email %><br />
+          <%= f.email_field :email, class: 'form-control', autofocus: true, placeholder: 'E-mailを入力してください' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control', placeholder: 'パスワードを入力してください' %>
+        </div>
+
+        <div class='text-center'><%= f.submit 'ログイン', class: 'btn btn-primary' %></div>
+        <div class='text-center'><%= link_to 'キャンセル', root_path, class: 'cancelLink' %></div>
+
+      <% end %>
+    </div>
+  </div>
+</div>

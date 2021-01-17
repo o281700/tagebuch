@@ -21,5 +21,11 @@ RSpec.describe Blog, type: :model do
       @blog.valid?
       expect(@blog.errors.full_messages).to include("Article can't be blank")
     end
+
+    it 'userと紐づいていないと保存できないこと' do
+      @blog.user = nil
+      @blog.valid?
+      expect(@blog.errors.full_messages).to include('User must exist')
+    end
   end
 end
