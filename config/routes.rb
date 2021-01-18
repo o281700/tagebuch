@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   }
   root 'top#index'
   resources :blogs
+  resources :users, only: :show
 end
