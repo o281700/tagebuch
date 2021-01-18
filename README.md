@@ -45,3 +45,20 @@ has_many :blogs
 
 ### Association
 belong_to :user
+
+## アプリケーション名
+
+Tagebuch
+
+## アプリケーション概要
+
+ブログ投稿アプリケーション
+
+## URL
+
+https://tagebuch-32118.herokuapp.com/
+
+## テスト用アカウント
+
+email: test@test.com  
+password: 1qaz2wsx
