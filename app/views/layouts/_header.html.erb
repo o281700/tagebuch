@@ -13,8 +13,8 @@
               <%= image_tag 'user_icon_default.png', size: '18x18', class: 'user_icon' %><%= current_user.nickname %>
             </div>
             <ul>
-              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
               <li><%= link_to 'マイページ', user_path(current_user.id) %></li>
+              <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
           <li>

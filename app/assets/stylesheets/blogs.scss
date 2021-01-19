@@ -82,6 +82,13 @@
       font-size: 2rem;
       font-weight: bold;
       padding-bottom: 10px;
+      a {
+        color: #000;
+        &:hover {
+          color: #000;
+          text-decoration: none;
+        }
+      }
     }
     &Date {
       padding-top: 10px;

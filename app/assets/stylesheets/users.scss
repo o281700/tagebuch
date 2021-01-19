@@ -1,3 +1,18 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.userShow {
+  min-height: calc(100vh - 40px);
+  background-color: #fafafa;
+  &BlogTitle {
+    padding-top: 3rem;
+    h1 {
+      font-size: 5rem;
+      font-weight: bold;
+    }
+  }
+  .userShowItem {
+    margin: 50px 0;
+  }
+  .blogSize {
+    padding: 50px;
+    background-color: #fff;
+  }
+}
