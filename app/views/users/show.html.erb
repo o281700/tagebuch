@@ -1,0 +1,61 @@
+<%= render 'layouts/header' %>
+
+<div class='userShow'>
+  <div class='container'>
+
+    <div class='userShowBlogTitle'>
+      <h1 class='text-center'>BLOG</h1>
+    </div>
+
+    <div class='row'>  
+      <div class='col-9'>
+        <% if @blogs.size == 0 %>
+          <div class='userShowItem blogInfo'>
+            <h1>ようこそTagebuchへ！</h1>
+            <br /><br />
+            <p>まだ記事がありません。</p><br />
+            <p>
+              どんな話題でも自由に書いてください。日々の出来事や趣味のこと、学習したことやアイデアなど様々なことを書き残してみてください。<br />
+              あとで読み返したときにきっと新しい発見が見つかります！
+            </p><br />
+            <hr><br>
+             <p>
+              使い方は簡単です。記事作成からすぐに投稿することができます。<br />
+              初めての記事を書いてみましょう。
+             </p>
+          </div>
+        <% end %>
+        
+        <% @blogs.each do |blog| %>
+          <div class='blogShowItem userShowItem'>
+            <div class='blogShowItemDate'><%= blog.updated_at.to_s(:datetime_jp) %></div>
+            <div class='blogShowItemTitle'><%= link_to blog.title, blog_path(blog) %></div>
+            <%# 編集/削除は仮置き、ユーザー管理機能実装後にユーザー詳細ページへ %>
+            <div class='text-left'>
+              <%= link_to '編集', edit_blog_path(blog), class: 'blogEdit' %>
+              /
+              <%= link_to '削除', blog_path(blog), method: :delete, class: 'blogDelete' %>
+            </div>
+            <div class='blogShowItemArticle'><%= blog.article %></div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class='col-3'>
+        <div class='userShowRight'>
+          <div class='userShowRightProfile'>プロフィール</div>
+          <%= image_tag 'user_icon_default.png', size: '70x70', class: 'userShowRightIcon' %>
+          <p><%= @nickname %></p>
+        </div>
+
+        <div class='newArticle'>
+          <p>最新記事</p>
+          <% @blogs.each do |blog| %>
+            <div><%= link_to blog.title, blog_path(blog) %><hr></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

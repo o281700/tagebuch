@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update]
 
   def index
-    @blogs = Blog.all.order('id DESC')
+    @blogs = Blog.includes(:user).order('id DESC')
   end
 
   def new
