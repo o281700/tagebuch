@@ -45,7 +45,7 @@
         <div class='userShowRight'>
           <div class='userShowRightProfile'>プロフィール</div>
           <%= image_tag 'user_icon_default.png', size: '70x70', class: 'userShowRightIcon' %>
-          <p><%= @nickname %></p>
+          <p><%= link_to @nickname, edit_user_path(current_user.id) %></p>
         </div>
 
         <div class='newArticle'>
