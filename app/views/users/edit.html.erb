@@ -12,6 +12,11 @@
           <%= f.text_field :nickname, class: 'form-control', autofocus: true, placeholder: 'ニックネームを入力してください' %>
         </div>
 
+        <div class='form-group'>
+          <%= f.label :blogname, class: 'control-label' %>
+          <%= f.text_field :blogname, class: 'form-control', placeholder: 'ブログ名を入力してください' %>
+        </div>
+
         <div class='text-center'><%= f.submit '編集', class: 'btn btn-primary' %></div>
         <div class='text-center'><%= link_to 'キャンセル', user_path(@user), class: 'cancelLink' %></div>
       <% end %>
