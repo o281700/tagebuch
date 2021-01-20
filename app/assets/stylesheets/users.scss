@@ -1,3 +1,4 @@
+// Show
 .userShow {
   min-height: calc(100vh - 40px);
   background-color: #fafafa;
@@ -31,5 +32,27 @@
     p {
       font-size: 2rem;
     }
+  }
+}
+
+// Edit
+.userEdit {
+  padding: 50px 0;
+  width: 50%;
+  margin: 0 auto;
+  &Form {
+    padding: 10px 0;
+    input {
+      font-size: 1.6rem;
+    }
+  }
+  .btn-primary {
+    height: 45px;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .cancelLink {
+    display: inline-block;
+    margin-top: 10px;
   }
 }

@@ -1,1 +1,21 @@
 <%= render 'layouts/sub_header' %>
+
+<div class='userEdit'>
+  <div class='container'>
+
+    <div class='userEditTitle'><h1><i class="far fa-address-card"></i> アカウント編集</h1></div>
+
+    <div class='userEditForm'>
+      <%= form_with model: @user, local: true  do |f| %>
+        <div class='form-group'>
+          <%= f.label :nickname, class: 'control-label' %>
+          <%= f.text_field :nickname, class: 'form-control', autofocus: true, placeholder: 'ニックネームを入力してください' %>
+        </div>
+
+        <div class='text-center'><%= f.submit '編集', class: 'btn btn-primary' %></div>
+        <div class='text-center'><%= link_to 'キャンセル', user_path(@user), class: 'cancelLink' %></div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
