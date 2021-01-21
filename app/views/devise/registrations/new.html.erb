@@ -19,7 +19,7 @@
           <%= f.email_field :email, class: 'form-control', placeholder: 'E-mailを入力してください' %>
         </div>
 
-        <div class="field">
+        <div class="form-group">
           <%= f.label :password %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -27,10 +27,12 @@
           <%= f.password_field :password, class: 'form-control', placeholder: 'パスワードを入力してください' %>
         </div>
 
-        <div class="field">
+        <div class="form-group">
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'パスワードを再入力してください' %>
         </div>
+
+        <%= f.hidden_field :blogname, value: 'My Blog' %>
 
         <div class='text-center'><%= f.submit '新規登録', class: 'btn btn-primary' %></div>
         <div class='text-center'><%= link_to 'キャンセル', root_path, class: 'cancelLink' %></div>

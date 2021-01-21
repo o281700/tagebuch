@@ -32,16 +32,29 @@ Things you may want to cover:
 | nickname           | string | null: false               |
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
+| blogname           | string | null: false               |
 
 ### Association
 has_many :blogs
+has_one :profile
+
+## Profileテーブル
+
+| column  | type       | option                         |
+| ------- | ---------- | ------------------------------ |
+| profile | text       |                                |
+| user    | references | null: false, foreign_key: true |
+
+### Association
+belongs_to :user
 
 ## blogsテーブル
 
-| column  | type   | option      |
-| ------- | ------ | ----------- |
-| title   | string | null: false |
-| article | text   | null: false |
+| column  | type       | option                         |
+| ------- | ---------- | ------------------------------ |
+| title   | string     | null: false                    |
+| article | text       | null: false                    |
+| user    | references | null: false, foreign_key: true |
 
 ### Association
 belong_to :user

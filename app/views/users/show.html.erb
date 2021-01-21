@@ -4,12 +4,12 @@
   <div class='container'>
 
     <div class='userShowBlogTitle'>
-      <h1 class='text-center'>BLOG</h1>
+      <h1 class='text-center'><%= @user.blogname %></h1>
     </div>
 
     <div class='row'>  
       <div class='col-9'>
-        <% if @blogs.size == 0 %>
+        <% if @user.blogs.size == 0 %>
           <div class='userShowItem blogInfo'>
             <h1>ようこそTagebuchへ！</h1>
             <br /><br />
@@ -21,12 +21,14 @@
             <hr><br>
              <p>
               使い方は簡単です。記事作成からすぐに投稿することができます。<br />
-              初めての記事を書いてみましょう。
+              初めての記事を書いてみましょう。<br />
+              ブログ名も変更してあなたのブログであることをアピールしてください。<br />
+              アカウントの編集を行うことで変えることができます。
              </p>
           </div>
         <% end %>
         
-        <% @blogs.each do |blog| %>
+        <% @user.blogs.each do |blog| %>
           <div class='blogShowItem userShowItem'>
             <div class='blogShowItemDate'><%= blog.updated_at.to_s(:datetime_jp) %></div>
             <div class='blogShowItemTitle'><%= link_to blog.title, blog_path(blog) %></div>
@@ -45,12 +47,12 @@
         <div class='userShowRight'>
           <div class='userShowRightProfile'>プロフィール</div>
           <%= image_tag 'user_icon_default.png', size: '70x70', class: 'userShowRightIcon' %>
-          <p><%= @nickname %></p>
+          <p><%= link_to @user.nickname, edit_user_path(@user) %></p>
         </div>
 
         <div class='newArticle'>
           <p>最新記事</p>
-          <% @blogs.each do |blog| %>
+          <% @user.blogs.each do |blog| %>
             <div><%= link_to blog.title, blog_path(blog) %><hr></div>
           <% end %>
         </div>
