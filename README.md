@@ -60,6 +60,7 @@ belongs_to :blog
 
 ### Association
 belong_to :user
+has_many :comment
 
 ## アプリケーション名
 
