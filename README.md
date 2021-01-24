@@ -36,17 +36,19 @@ Things you may want to cover:
 
 ### Association
 has_many :blogs
-has_one :profile
+has_many :comments
 
-## Profileテーブル
+## Commentsテーブル
 
 | column  | type       | option                         |
 | ------- | ---------- | ------------------------------ |
-| profile | text       |                                |
+| text    | text       |                                |
 | user    | references | null: false, foreign_key: true |
+| blog    | references | null: false, foreign_key: true |
 
 ### Association
 belongs_to :user
+belongs_to :blog
 
 ## blogsテーブル
 
