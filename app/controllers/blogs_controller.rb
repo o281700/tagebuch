@@ -20,6 +20,8 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @blog.comments.includes(:user)
   end
 
   def destroy
