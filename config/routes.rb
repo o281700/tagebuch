@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   root 'top#index'
-  resources :blogs
+  resources :blogs do
+    resources :comments, only: [:create]
+  end
   resources :users, only: [:show, :edit, :update]
 end
