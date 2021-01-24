@@ -30,6 +30,16 @@
           <% end %>
         <% end %>
       </div>
+
+      <div class='commentText'>
+        <% if @comments.size != 0 %>
+          <% @comments.each do |comment| %>
+            <p><%= image_tag 'user_icon_default.png', size: '20x20', class: 'commentUserImage' %><%= comment.user.nickname %></p>
+            <p><%= comment.text %></p>
+            <p><%= comment.created_at.to_s(:datetime_jp) %></p>
+          <% end %>
+        <% end %>
+      </div>
     </div>
 
     <div class='transition'>
