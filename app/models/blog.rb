@@ -2,6 +2,7 @@ class Blog < ApplicationRecord
   validates :title, :article, presence: true
 
   belongs_to :user
+  has_many :comments
 
   def previous
     Blog.where('id < ?', self.id).order('id DESC').first
