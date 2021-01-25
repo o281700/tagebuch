@@ -21,7 +21,7 @@ class BlogsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @blog.comments.includes(:user)
+    @comments = @blog.comments.includes(:user).order('created_at DESC')
   end
 
   def destroy

@@ -1,11 +1,7 @@
 class CommentsController < ApplicationController
   def create
-    comment = Comment.new(comment_params)
-    if comment.save
-      redirect_to blog_path(comment.blog)
-    else
-      render 'blogs/show'
-    end
+    comment = Comment.create(comment_params)
+    redirect_to blog_path(comment.blog)
   end
 
   private
