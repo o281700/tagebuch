@@ -29,7 +29,9 @@
             <% end %>
             <p><%= comment.text %></p>
             <p><%= comment.created_at.to_s(:datetime_jp) %></p>
-            <%= link_to '削除', blog_comment_path(comment.blog.id, comment.id), method: :delete, class: 'commentDelete btn btn-outline-danger' %>
+            <% if comment.user.id == current_user.id %>
+              <%= link_to '削除', blog_comment_path(comment.blog.id, comment.id), method: :delete, class: 'commentDelete btn btn-outline-danger' %>
+            <% end %>
           </div>
         <% end %>
       </div>
