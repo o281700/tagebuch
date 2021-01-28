@@ -24,10 +24,12 @@
         <% @comments.each do |comment| %>
           <div class='commentTextItem'>
             <%= link_to user_path(comment.user.id), class: 'commentUser' do %>
-              <%= image_tag 'user_icon_default.png', size: '20x20', class: 'commentUserImage' %><%= comment.user.nickname %>
+              <%= image_tag 'user_icon_default.png', size: '20x20', class: 'commentUserImage' %>
+              <%= comment.user.nickname %>
             <% end %>
             <p><%= comment.text %></p>
-            <%= comment.created_at.to_s(:datetime_jp) %>
+            <p><%= comment.created_at.to_s(:datetime_jp) %></p>
+            <%= link_to '削除', '#', class: 'commentDelete btn btn-outline-danger' %>
           </div>
         <% end %>
       </div>

@@ -104,6 +104,8 @@
   .comment {
     &UserImage {
       margin-right: 5px;
+      border: 1px solid #000;
+      border-radius: 50%;
     }
     &Text {
       &Item {
@@ -113,6 +115,10 @@
           white-space: pre-line;
         }
       }
+    }
+    &Delete {
+      font-size: 1rem;
+      // border: 1px solid #ccc;
     }
     &Form {
       textarea {
