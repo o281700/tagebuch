@@ -24,10 +24,12 @@
         <% @comments.each do |comment| %>
           <div class='commentTextItem'>
             <%= link_to user_path(comment.user.id), class: 'commentUser' do %>
-              <%= image_tag 'user_icon_default.png', size: '20x20', class: 'commentUserImage' %><%= comment.user.nickname %>
+              <%= image_tag 'user_icon_default.png', size: '20x20', class: 'commentUserImage' %>
+              <%= comment.user.nickname %>
             <% end %>
             <p><%= comment.text %></p>
-            <%= comment.created_at.to_s(:datetime_jp) %>
+            <p><%= comment.created_at.to_s(:datetime_jp) %></p>
+            <%= link_to '削除', blog_comment_path(comment.blog.id, comment.id), method: :delete, class: 'commentDelete btn btn-outline-danger' %>
           </div>
         <% end %>
       </div>
@@ -35,9 +37,9 @@
       <div class='commentForm'>
         <%= form_with model: [@blog, @comment], local: true  do |f| %>
           <div class='form-group'>
-            <%= f.text_area :text, class: 'form-control', placeholder: 'コメントする', rows: '3' %>
+            <%= f.text_area :text, class: 'form-control', placeholder: 'コメントする', rows: '8' %>
           </div>
-          <div class='form-group text-center'><%= f.submit 'コメントを送信', class: 'btn btn-primary' %></div>
+          <div class='form-group'><%= f.submit '送信', class: 'btn btn-light' %></div>
         <% end %>
       </div>
     </div>

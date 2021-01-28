@@ -104,6 +104,8 @@
   .comment {
     &UserImage {
       margin-right: 5px;
+      border: 1px solid #000;
+      border-radius: 50%;
     }
     &Text {
       &Item {
@@ -114,15 +116,22 @@
         }
       }
     }
+    &Delete {
+      font-size: 1rem;
+      // border: 1px solid #ccc;
+    }
     &Form {
       textarea {
+        margin-top: 30px;
         font-size: 1.6rem;
         resize: none;
+        width: 50%;
       }
       input {
-        width: 100%;
+        width: 10%;
         font-size: 1.6rem;
         border-radius: 5px;
+        border: 1px solid #ccc;
       }
     }
   }
