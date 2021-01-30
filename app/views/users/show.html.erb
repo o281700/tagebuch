@@ -45,9 +45,17 @@
 
       <div class='col-3'>
         <div class='userShowRight'>
-          <div class='userShowRightProfile'>プロフィール</div>
+          <p class='userShowRightProfile'>プロフィール<p>
           <%= image_tag 'user_icon_default.png', size: '70x70', class: 'userShowRightIcon' %>
           <p><%= link_to @user.nickname, edit_user_path(@user) %></p>
+        </div>
+
+        <div class='search'>
+          <p>検索<p>
+          <%= form_with url: search_blogs_path, local: true, method: :get do |f| %>
+            <%= f.text_field :keyword, placeholder: '検索' %>
+            <%= f.submit '検索' %>
+          <% end %>
         </div>
 
         <div class='newArticle'>

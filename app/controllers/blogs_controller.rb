@@ -41,6 +41,10 @@ class BlogsController < ApplicationController
     end
   end
 
+  def search
+    @blogs = Blog.search(params[:keyword])
+  end
+
   private
 
   def blog_params

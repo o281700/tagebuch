@@ -1,0 +1,25 @@
+<%= render 'layouts/sub_header' %>
+
+<div class='userShow'>
+  <div class='container'>
+
+    <div class='row'>  
+      <div class='col-12'>
+        
+        <% @blogs.each do |blog| %>
+          <div class='blogShowItem userShowItem'>
+            <div class='blogShowItemDate'><%= blog.updated_at.to_s(:datetime_jp) %></div>
+            <div class='blogShowItemTitle'><%= link_to blog.title, blog_path(blog) %></div>
+            <%# 編集/削除は仮置き、ユーザー管理機能実装後にユーザー詳細ページへ %>
+            <div class='text-left'>
+              <%= link_to '編集', edit_blog_path(blog), class: 'blogEdit' %>
+              /
+              <%= link_to '削除', blog_path(blog), method: :delete, class: 'blogDelete' %>
+            </div>
+            <div class='blogShowItemArticle'><%= blog.article %></div>
+          </div>
+        <% end %>
+      </div>
+
+  </div>
+</div>
