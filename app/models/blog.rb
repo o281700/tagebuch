@@ -1,5 +1,8 @@
 class Blog < ApplicationRecord
-  validates :title, :article, presence: true
+  with_options presence: true do
+    validates :title, length: { maximum: 40 }
+    validates :article, length: { maximum: 500 }
+  end 
 
   belongs_to :user
   has_many :comments, dependent: :destroy
