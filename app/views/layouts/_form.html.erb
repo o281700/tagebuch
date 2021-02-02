@@ -3,11 +3,13 @@
     <div class='blogNewForm'>
       <%= form_with model: @blog, local: true  do |f| %>
         <div class='form-group'>
-          <%= f.text_field :title, class: 'form-control', placeholder: 'タイトル(40文字まで)', maxlength: '40' %>
+          <%= f.text_field :title, class: 'form-control', placeholder: 'タイトル(40文字まで)', maxlength: '40', id: 'articleTitle' %>
+          <div class='articleCount' id='title_num'>0文字/40文字</div>
         </div>
 
         <div class='form-group'>
-          <%= f.text_area :article, class: 'form-control', rows: '20', placeholder: '本文を入力してください(500文字まで)', maxlength: '500' %>
+          <%= f.text_area :article, class: 'form-control', rows: '20', placeholder: '本文を入力してください(500文字まで)', maxlength: '500', id: 'articleText' %>
+        <div class='articleCount' id='text_num'>0文字/500文字</div>
         </div>
 
         <div class='text-center'><%= f.submit '送信', class: 'btn btn-primary' %></div>
