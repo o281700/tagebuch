@@ -48,7 +48,7 @@
 
         <div class='newArticle'>
           <p>最新記事</p>
-          <% @user.blogs.each do |blog| %>
+          <% @user.blogs.first(5).each do |blog| %>
             <div><%= link_to blog.title, blog_path(blog) %><hr></div>
           <% end %>
         </div>
