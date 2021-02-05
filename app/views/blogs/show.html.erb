@@ -7,17 +7,7 @@
       <div class='blogShowBlogName'>BLOG</div>
     </div>
 
-    <div class='blogShowItem'>
-      <div class='blogShowItemDate'><%= @blog.updated_at.to_s(:datetime_jp) %></div>
-      <div class='blogShowItemTitle'><%= @blog.title %></div>
-      <%# 編集/削除は仮置き、ユーザー管理機能実装後にユーザー詳細ページへ %>
-      <div class='text-left'>
-        <%= link_to '編集', edit_blog_path(@blog), class: 'blogEdit' %>
-        /
-        <%= link_to '削除', blog_path(@blog), method: :delete, class: 'blogDelete' %>
-      </div>
-      <div class='blogShowItemArticle'><%= @blog.article %></div>
-    </div>
+    <%= render partial: 'layouts/blog', locals: { blog: @blog } %>
 
     <div class='comment'>
       <div class='commentText'>

@@ -1,7 +1,7 @@
 class Blog < ApplicationRecord
   with_options presence: true do
     validates :title, length: { maximum: 40 }
-    validates :article, length: { maximum: 500 }
+    validates :article, length: { maximum: 1000 }
   end 
 
   belongs_to :user

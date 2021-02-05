@@ -1,0 +1,12 @@
+<div class='blogShowItem userShowItem'>
+  <div class='blogShowItemDate'><%= blog.updated_at.to_s(:datetime_jp) %></div>
+  <div class='blogShowItemTitle'><%= link_to blog.title, blog_path(blog) %></div>
+  <% if current_user.id == blog.id %>
+    <div class='text-left'>
+      <%= link_to '編集', edit_blog_path(blog), class: 'blogEdit' %>
+      /
+      <%= link_to '削除', blog_path(blog), method: :delete, class: 'blogDelete' %>
+    </div>
+  <% end %>
+  <div class='blogShowItemArticle'><%= blog.article %></div>
+</div>
