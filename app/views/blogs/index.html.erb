@@ -8,6 +8,11 @@
         <div class='col-md-4'>
           <div class='blogItem'>
             <div class='blogItemContent'>
+              <% if blog.image.attached? %>
+                <div class='blogItemImage'><%= image_tag blog.image %></div>
+              <% else %>
+                <div class='blogItemImage'><%= image_tag 'noimage.png' %></div>
+              <% end %>
               <div class='blogItemTitle'><%= blog.title %></div>
               <div class='blogItemUser'><%= blog.user.nickname %></div>
               <div class='blogItemTime'><%= blog.updated_at.to_s(:datetime_jp) %></div>
