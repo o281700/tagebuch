@@ -28,7 +28,7 @@
           </div>
         <% end %>
         
-        <%= render partial: 'layouts/blog', collection: @user.blogs %>
+        <%= render partial: 'layouts/blog', collection: @user.blogs.order('id DESC') %>
       </div>
 
       <div class='col-3'>

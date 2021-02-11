@@ -41,11 +41,6 @@
     border-bottom: 1px solid #eee;
     margin: 15px 0;
     padding: 0 5px;
-    &Content {
-      min-height: 30rem;
-      max-height: 30rem;
-      overflow: hidden;
-    }
     &Title {
       font-size: 2rem;
       font-weight: bold;
@@ -59,8 +54,12 @@
       font-size: 1.4rem;
     }
     &Article {
-      white-space: normal;
+      height: 10rem;
       color: #7e7e7e;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 4;
+      overflow: hidden;
     }
     &Continued {
       text-align: right;
