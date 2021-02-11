@@ -1,7 +1,7 @@
 // NewPage
 .blogNew {
   input {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   textarea {
     font-size: 1.6rem;
@@ -21,6 +21,9 @@
   .cancelLink {
     display: block;
     margin-top: 10px;
+  }
+  .articleImage {
+    font-size: 1.6rem;
   }
 }
 
@@ -99,9 +102,19 @@
       padding-top: 10px;
     }
     &Article {
-      border-top: solid #eee;
       padding: 20px 0;
       white-space: pre-wrap;
+    }
+    hr {
+      height: 2px;
+      background-color: #eee;
+      border: none;
+    }
+    &Image {
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     }
   }
   .comment {
@@ -121,7 +134,6 @@
     }
     &Delete {
       font-size: 1rem;
-      // border: 1px solid #ccc;
     }
     &Form {
       textarea {
