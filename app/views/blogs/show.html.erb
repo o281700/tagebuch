@@ -4,7 +4,7 @@
   <div class='container'>
 
     <div class='blogShowBlog'>
-      <div class='blogShowBlogName'>BLOG</div>
+      <div class='blogShowBlogName'><%= @blog.user.blogname %></div>
     </div>
 
     <%= render partial: 'layouts/blog', locals: { blog: @blog } %>
