@@ -10,7 +10,7 @@ function count() {
   articleText.addEventListener("keyup", () => {
     const textVal = articleText.value.length;
     const textNum = document.getElementById("text_num");
-    textNum.innerHTML = `${textVal}文字/500文字`;
+    textNum.innerHTML = `${textVal}文字/1000文字`;
   });
 }
 
